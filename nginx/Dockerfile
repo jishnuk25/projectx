@@ -6,6 +6,6 @@ COPY static-site/index.css /etc/nginx/html/
 COPY static-site/nginx.conf /etc/nginx/nginx.conf
 
 RUN openssl req -x509 -nodes -days 365 \
--subj  "CN=localhost" \
+-subj  "/CN=localhost" \
 -newkey rsa:2048 -keyout /etc/nginx/private/nginx-selfsigned.key \
 -out /etc/nginx/certs/nginx-selfsigned.crt;
